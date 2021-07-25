@@ -15,8 +15,25 @@ body{
 
 .sessao{
     height: 100vh;
-    background-image: url("Imagens/fundo.jpg");
-    filter: brightness(40%);
+    background-image: url("Imagens/fundo.png");
+    //filter: brightness(40%);
     background-size:cover;
     
+}
+.sessao > .conteudo{
+    display: flex;
+    flex-wrap: wrap;
+    filter: brightness(80%);
+    padding-top: 80px; 
+    align-items: center;
+    justify-content: center;
+}
+
+.filmes{
+    padding: 10px;
+}
+
+.filmes > img{
+    width: 250px;
+    height: 350px;
 }
