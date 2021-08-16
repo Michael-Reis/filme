@@ -8,20 +8,15 @@
   <title>Mydrugs</title>
 
   <!-- Bootstrap biblioteca de estilos  -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap" rel="stylesheet">
 
   <!-- Javascript (interação) -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
-    crossorigin="anonymous"></script>
-
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
   <!-- Referênciar a página de designer -->
   <link rel="stylesheet" href="estilo.css">
 
@@ -29,40 +24,60 @@
 
 <body>
 
-  <div>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark menu">
-      <a class="navbar-brand" href="#"><img src="imagens/mydrugs.png" alt="logo mydrungs" class="logo"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Séries</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Filmes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Bombando</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">+18</a>
-          </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0" action="#">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" id="nomedofilme" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" id="btnpesquisar" type="submit">Search</button>
-        </form>
+  <header >
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark menu">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="imagens/starwars-logo.png" alt="logo mydrungs" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Séries</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Filmes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Bombando</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">+18</a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0" action="#">
+            <input class="form-control mr-sm-2 pesquisa" type="text" placeholder="Search" id="nomedofilme" aria-label="Search">
+            <button class="btn btn-outline-info my-2 my-sm-0" id="btnpesquisar" type="submit">Search</button>
+          </form>
+        </div>
       </div>
     </nav>
-  </div>
+  </header>
 
-  <section class="sessao" id="sessao"> 
+  <section class="sessaoprincipal">
+    <div class="banner-inicial">
+      <img src="./Imagens/starwars.jpg" alt="starwars" class="banner">
+      <span class="titulo-banner">
+        <span class="nome-filme">Filmes</span>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius amet quidem explicabo, error labore optio porro. Possimus, temporibus sapiente quasi est pariatur, laboriosam nisi voluptates quas itaque quibusdam nam quo?</p>
+      </span>
+      <div class="sombra"></div>
+    </div>
+
+
+    <div class="grid-container mt-4">
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+    </div>
+  </section>
+
+  <section class="sessao pesquisa" id="sessao"> 
     <div class="conteudo">
       
     </div>
