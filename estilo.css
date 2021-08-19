@@ -60,6 +60,7 @@ body {
 
 
 .grid-container{
+    max-width: 1281px;
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 2%;
@@ -67,28 +68,53 @@ body {
 
 .grid-item{
     background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    /* box-shadow:    0 0px 13px 0 rgb(31 38 135 / 99%); */
+    box-shadow: 0 0px 13px 0 rgb(27 49 89);
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    max-width: 410px;
+    position: relative;
+    overflow: hidden;
+    
 }
-.sessao > .conteudo{
-    display: flex;
-    flex-wrap: wrap;
-    filter: brightness(80%);
-    padding-top: 80px; 
-    align-items: center;
-    justify-content: center;
-}
-
-.filmes{
-    padding: 10px;
+.grid-item > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+ 
 }
 
-.filmes > img{
-    width: 250px;
-    height: 350px;
+.original_title{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+.grid-item > img{ 
+    transform: scale(1);
+    transition: 0.9s ease-in-out;
+}
+
+.grid-item > .sombra{
+    cursor: pointer;
+}
+.grid-item:hover img{
+    transform: scale(1.2);
+}
+
+body::-webkit-scrollbar {
+    width: 2px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgb(19, 19, 31);      /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #14a2c5;  /* creates padding around scroll thumb */
+
 }
 
 
@@ -96,5 +122,19 @@ body {
 @media (min-width: 1200px){
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1306px;
+    }
+}
+
+@media (max-width: 662px){
+    .grid-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    .grid-item{
+        margin-bottom: 20px;
     }
 }
