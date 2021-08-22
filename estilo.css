@@ -153,6 +153,11 @@ body {
     left:0;
     font-size: 1rem;
     margin-left: 10px;
+    z-index: 2;
+}
+
+.dados-filme{
+    max-width: 800px;
 }
 
 .grid-item > img{ 
@@ -160,6 +165,9 @@ body {
     transition: 0.9s ease-in-out;
 }
 
+.footer{
+    height: 200px;
+}
 .grid-item > .sombra{
     cursor: pointer;
 }
