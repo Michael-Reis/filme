@@ -166,7 +166,11 @@ body {
 }
 
 .footer{
+    display: flex;
     height: 200px;
+    align-items: flex-end;
+    color: #fff;
+    justify-content: center;
 }
 .grid-item > .sombra{
     cursor: pointer;
@@ -190,10 +194,37 @@ body::-webkit-scrollbar-thumb {
 
 
 
+
+@media (max-width: 1200px){
+ 
+    .banner-pesquisado{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .banner-pesquisado img{
+        position: initial!important;
+        right: initial!important;
+    }
+    
+    .info-filme{
+        display: flex;
+        flex-direction: row-reverse;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+ 
+}
+
+
 @media (min-width: 1200px){
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1306px;
     }
+
 }
 
 @media (max-width: 662px){

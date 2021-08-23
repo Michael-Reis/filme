@@ -21,6 +21,8 @@
     filmepesquisado = document.querySelector('#nomedofilme')
     btnpesquisar = document.querySelector('#btnpesquisar')
     logo = document.querySelector('.logo-filtrado')
+    estreia = document.querySelector('.data-estreia')
+    origin = document.querySelector('.origin')
 
     api_key = "bc2edd6da7c1980f09e65291361b7db1";
     pesquisaFilme(data.id)
@@ -36,6 +38,11 @@
                 banner.src = urlbasebanner + codigobanner
                 logoapi = respostaJson.production_companies[0].logo_path
                 logo.src = urlbaselogo + logoapi
+                data_eua = respostaJson.release_date
+                data_brasileira = data_eua.split('-').reverse().join('/');
+                estreia.innerText = data_brasileira
+                pais = respostaJson.production_countries[0].iso_3166_1 
+                origin.innerText = pais
                 
 
 
