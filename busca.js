@@ -9,6 +9,14 @@
         var valor = chaveValor[1];
         data[chave] = valor;
     });
+    api_key = "bc2edd6da7c1980f09e65291361b7db1";
+
+    if(data.tipo == "movie"){
+        pesquisaFilme(data.id, api_key)
+    }else{
+        pesquisaSerie(data.id, api_key)
+    }
+
 
     urlbasebanner ="https://www.themoviedb.org/t/p/w1920_and_h1080_bestv2/"; 
     urlbaseposter ="https://www.themoviedb.org/t/p/w780/"; 
@@ -24,12 +32,38 @@
     estreia = document.querySelector('.data-estreia')
     origin = document.querySelector('.origin')
 
-    api_key = "bc2edd6da7c1980f09e65291361b7db1";
-    pesquisaFilme(data.id)
-    function pesquisaFilme(idfilme){
+    function pesquisaFilme(idfilme, api_key){
         fetch("https://api.themoviedb.org/3/movie/" + idfilme +"?api_key="+ api_key +"&language=pt-br",{method: "GET",  
             }).then(function(resposta){resposta.json().then(function(respostaJson){
                 titulofilmeapi = respostaJson.title
+                titulofilme = titulofilmeapi.toUpperCase()
+                titulo.innerText = titulofilme
+                sinopse.innerText = respostaJson.overview
+                poster.src = urlbaseposter + respostaJson.poster_path
+                codigobanner = respostaJson.backdrop_path ? respostaJson.backdrop_path : respostaJson.poster_path
+                banner.src = urlbasebanner + codigobanner
+                logoapi = respostaJson.production_companies[0].logo_path
+                logo.src = urlbaselogo + logoapi
+                data_eua = respostaJson.release_date
+                data_brasileira = data_eua.split('-').reverse().join('/');
+                estreia.innerText = data_brasileira
+                pais = respostaJson.production_countries[0].iso_3166_1 
+                origin.innerText = pais
+                
+
+
+            })
+        })
+
+    }
+
+   
+    function pesquisaSerie(idfilme, api_key){
+        console.log("https://api.themoviedb.org/3/tv/" + idfilme +"?api_key="+ api_key +"&language=pt-br")
+        fetch("https://api.themoviedb.org/3/tv/" + idfilme +"?api_key="+ api_key +"&language=pt-br",{method: "GET",  
+            }).then(function(resposta){resposta.json().then(function(respostaJson){
+                console.log(respostaJson)
+                titulofilmeapi = respostaJson.original_name
                 titulofilme = titulofilmeapi.toUpperCase()
                 titulo.innerText = titulofilme
                 sinopse.innerText = respostaJson.overview

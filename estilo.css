@@ -54,6 +54,15 @@ body {
     left:0;
 }
 
+.sombras{
+    position: absolute;
+    background: linear-gradient(90deg, rgb(19, 19, 31) 3.01%, rgba(19, 19, 31, 0) 119.99%);  
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+}
+
 .nome-filme{
     font-size: 2rem;
 }
@@ -127,7 +136,7 @@ body {
     max-width: 1281px;
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 2%;
+    gap: 23px;
 }
 
 .grid-item{
