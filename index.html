@@ -19,6 +19,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
   <!-- Referênciar a página de designer -->
   <link rel="stylesheet" href="estilo.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
 
 </head>
 
@@ -48,8 +51,8 @@
             </li>
        
           </ul>
-          <form class="form-inline mt-2 mt-md-0" action="#">
-            <input class="form-control mr-sm-2 pesquisa" type="text" placeholder="Pesquise aqui" id="nomedofilme" aria-label="Search">
+          <form class="form-inline mt-2 mt-md-0" action="#" >
+            <input class="form-control mr-sm-2 pesquisa buscainput" type="text" placeholder="Pesquise aqui" id="nomedofilme" aria-label="Search">
             <button class="btn btn-outline-info my-2 my-sm-0" id="btnpesquisar" type="submit">Search</button>
           </form>
         </div>
@@ -58,7 +61,7 @@
   </header>
 
   <section class="sessaoprincipal">
-    <div class="banner-inicial">
+    <div class="banner-inicial" id="topo">
       <div class="sombras"></div> 
       <img src="./Imagens/starwars.jpg" alt="starwars" class="banner">
       <span class="titulo-banner">
@@ -71,12 +74,30 @@
 
     <div class="grid-container mt-4 filmes">
     </div>
+    <div class="btncarregamais">
+      <button class="carregamais"><img src="./Imagens/loading.gif" alt="" class="loadingmaisinfo"><span class="carregado">Carregando</span></button>
+    </div>
+    <div class="btnflutuante">
+      <a href="#" style="text-decoration: none;"><img src="./Imagens/setapracima.png" alt="" class="seta" > TOPO</a>
+    </div>
 
   </section>
   <div class="footer container">
     <p>Feito com muito carinho por: <a href="https://www.linkedin.com/in/michael-reis/">Michael Reis</a></p>
   </div>
+
   <script src="./script.js"></script>
+  <script>
+    //scrol top
+    $(document).ready(function() {
+      $('.btnflutuante').click(function(){
+        $('html, body').animate({scrollTop:0}, 'slow');
+        return false;
+      });
+    });
+
+  </script>
+
 
 
 </body>

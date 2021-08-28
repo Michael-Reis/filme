@@ -1,13 +1,14 @@
+
 (function(){
     const paginasarray = []; 
     const api_key = "bc2edd6da7c1980f09e65291361b7db1"
-    const nomedofilme = "Loki";
     const fotofilme = "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/"
     const busca = "http://localhost/github/mydrugs/filme-api/busca.html?id="
     filmepesquisado = document.querySelector('#nomedofilme')
     btnpesquisar = document.querySelector('#btnpesquisar')
     conteudodiv = document.querySelector('.filmes')
-
+    btncarregamais = document.querySelector('.btncarregamais')
+    buscainput = document.querySelector('.buscainput')
 
     async function dadosAPI(nomedofilme){
         const dadosapifilme = []
@@ -24,11 +25,8 @@
         arraypronto = Promise.all(paginasarray).then(filme =>{
            filme.forEach(info => {
                 qtdfilmes = info.results.length
-                //console.log(info.page)
                 for (let u = 0; u < qtdfilmes; u++) {
-                    //console.log(info.results[u])
                     dadosapifilme.push(info.results[u])     
-                    //console.log("Página:" + info.page)
                 }
            })
            return dadosapifilme; 
@@ -45,7 +43,7 @@
                         break; 
                     case 'tv':
                         insereFront(dadosfilme, tipomidia)
-                        console.log(dadosfilme)
+                        //console.log(dadosfilme)
                         break; 
                     case 'person': 
                         insereFront(dadosfilme, tipomidia)
@@ -64,7 +62,13 @@
                 sombra.className = "sombra" 
                 linkfilme[i].appendChild(sombra)  
             }
-            
+
+            while(paginasarray.length) {
+                paginasarray.pop();
+            }
+            while(dadosapifilme.length) {
+                dadosapifilme.pop();
+            } 
 
             
         })
@@ -118,6 +122,40 @@
 
  
     }
+        
+    dadosAPI("star wars").then( () => {
+        btncarregamais.style.display = "none";
+    })
 
-    dadosAPI(nomedofilme)
+    btnpesquisar.addEventListener('click', function(){
+        filmesolicitado = filmepesquisado.value;  
+        lengthfilme = filmepesquisado.value.length
+        document.querySelectorAll('.grid-item').forEach((filmeanterior)=>{
+            filmeanterior.remove()
+        }) 
+
+        if(lengthfilme > 1){ 
+            btncarregamais.style.display = "initial";
+            dadosAPI(filmesolicitado).then( () => {
+                btncarregamais.style.display = "none";
+            })
+        }else{
+            btncarregamais.style.display = "initial";
+            dadosAPI("Star wars").then( () => { 
+                btncarregamais.style.display = "none";
+            })
+        }
+    })
+
+
+    
+
+
+
+    
+ 
+
+
+    
 })()
+

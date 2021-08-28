@@ -188,6 +188,59 @@ body {
     transform: scale(1.2);
 }
 
+.btnflutuante{
+    position: fixed;
+    display: flex;
+    z-index: 9;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 200px;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor:pointer;
+    text-decoration: none;
+
+}
+
+.btnflutuante > a > img{
+    width: 60px;
+    text-decoration: none;
+    
+}
+
+.subindo{
+    text-decoration: none;
+}
+
+.btncarregamais{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carregamais{
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 0, 0, 0);
+    border: none;
+    width: 20px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.carregamais > img{
+    width: 80px;
+}
+
+.buscainput{
+    display: none;  
+}
+
 body::-webkit-scrollbar {
     width: 2px;
 }
